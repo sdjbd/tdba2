@@ -338,15 +338,17 @@ with st.sidebar:
 
         start = start_date + " " + start_time
         end = end_date + " " + end_time
-        
-        session_state_start = SessionState.get(name='')
-        session_state_end = SessionState.get(name='')
+       
     
         submitted = st.form_submit_button("Submit")
+
         if submitted:
         
-            session_state_start = start
-            session_state_end = end
+            if 'start' not in st.session_state:
+                st.session_state['start'] = start
+
+            if 'end' not in st.session_state:
+                st.session_state['end'] = end
 
         
 
