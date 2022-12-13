@@ -112,6 +112,7 @@ def energyTemp(op, periods):
 
 def autoManual(start, end):
 
+    
     #we transform the start and en date into milliseconds:
     start = dateToMilisec_input(start)
     end = dateToMilisec_input(end)
