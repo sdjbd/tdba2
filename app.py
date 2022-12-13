@@ -337,8 +337,8 @@ with st.sidebar:
         end_date = str(st.date_input(label="End date", label_visibility="visible"))
         end_time = str(st.time_input(label="End time", label_visibility="visible"))
 
-        start = start_date + " " + start_time
-        end = end_date + " " + end_time
+        start_g = start_date + " " + start_time
+        end_g = end_date + " " + end_time
        
     
         submitted = st.form_submit_button("Submit")
@@ -346,10 +346,10 @@ with st.sidebar:
         if submitted:
         
             if 'start' not in st.session_state:
-                st.session_state['start'] = start
+                st.session_state['start'] = start_g
 
             if 'end' not in st.session_state:
-                st.session_state['end'] = end
+                st.session_state['end'] = end_g
 
         
 
