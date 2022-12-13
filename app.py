@@ -396,10 +396,10 @@ with tab2:
 
     if st.checkbox('Show Operating Periods'):
         st.subheader('Operating periods')
-        op = load_op(start, end)
+        op = load_op(st.session_state['start'], st.session_state['end'])
         st.write(op)
         
-        op=load_op(start, end)
+        op=load_op(st.session_state['start'], st.session_state['end'])
 
         selectedPeriod = st.selectbox('Select OP', op)
 
@@ -435,21 +435,21 @@ with tab3:
     if st.checkbox('Automatic and Manual periods'):
 
         st.subheader('Automatic & Manual modes over time')
-        fig = gantt_1(start, end)
+        fig = gantt_1(st.session_state['start'], st.session_state['end'])
         st.plotly_chart(fig)
 
         st.subheader('Automatic and Manual periods')
-        periodos = auto_manual(start, end)
+        periodos = auto_manual(st.session_state['start'], st.session_state['end'])
         st.write(periodos)
 
 
     if st.checkbox('Automatic vs Manual operations'):
 
         st.subheader('Operations manual vs automatic')
-        (operations, operationsMin) = AMop(start, end)
+        (operations, operationsMin) = AMop(st.session_state['start'], st.session_state['end'])
 
         st.subheader('Operations over time')
-        fig2 = gantt_2(start, end)
+        fig2 = gantt_2(st.session_state['start'], st.session_state['end'])
         st.plotly_chart(fig2)
         
         st.bar_chart(operations)
