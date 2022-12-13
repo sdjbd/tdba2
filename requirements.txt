@@ -1,0 +1,8 @@
+streamlit 
+pandas
+numpy
+sqlalchemy==1.4.22
+matplotlib 
+datetime
+psycopg2-binary
+plotly
